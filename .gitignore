@@ -1,0 +1,8 @@
+.installed.cfg
+bootstrap.py
+bin/
+downloads/
+etc/
+htdocs/
+parts/
+var/
