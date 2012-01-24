@@ -53,7 +53,7 @@ Listen ${ports:apache}
 # Example:
 # LoadModule foo_module modules/mod_foo.so
 LoadModule php5_module        modules/libphp5.so
-#
+LoadModule wsgi_module        modules/mod_wsgi.so
 
 <IfModule !mpm_netware_module>
 <IfModule !mpm_winnt_module>
@@ -164,6 +164,13 @@ DocumentRoot ${buildout:directory}/htdocs
     Order allow,deny
     Allow from all
 
+</Directory>
+
+WSGIScriptAlias /app ${buildout:directory}/bin/app.wsgi
+
+<Directory ${buildout:directory}/bin>
+  Order allow,deny
+  Allow from all
 </Directory>
 
 #
